@@ -7,7 +7,7 @@ class TestdataTest < Test::Unit::TestCase
   
   def test_dereference
     source_dir = File.expand_path("#{File.dirname(__FILE__)}/testdata")
-    ref_document = "#{Ms::TESTDATA}/test/document.txt"
+    ref_document = "#{MS::TESTDATA}/test/document.txt"
     doc_a = "#{source_dir}/test/document.txt"
     doc_b = "#{source_dir}/name.txt"
     
@@ -28,10 +28,10 @@ class TestdataTest < Test::Unit::TestCase
     # Within the dereference block, the referenece files
     # under the source directory are replaced with copies
     # of corresponding files under the reference directory 
-    # (Ms::TESTDATA).
+    # (MS::TESTDATA).
     #
     
-    dereference(source_dir, Ms::TESTDATA) do
+    dereference(source_dir, MS::TESTDATA) do
       assert_equal document, File.read(doc_a)
       assert_equal document, File.read(doc_b)
       
